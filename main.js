@@ -3,20 +3,16 @@
 // アドレスの末尾にbase64コードが付けられた時、それをデコードして実行する
 var code = location.search.slice(1);
 try {
-	var result = eval(base64Decode(code));
-	alert(result);
+	if (code != "") {
+		var result = eval(base64Decode(code));
+		alert(result);
+	}
 	document.getElementById("result").value = result;
 } catch(error) {
 	console.log(error);
 	document.getElementById("errors").value = error;
 
 }
-/*
-if (result != undefined) {
-	alert(result);
-	document.getElementById("decode_btn").value = result;
-}
-*/
 
 // textareaでtabを入力できるようにするコード
 document.getElementById("source").addEventListener("keydown", function(e) {
@@ -37,7 +33,21 @@ document.getElementById("source").addEventListener("keydown", function(e) {
 
 // 各ボタンを押すと処理が実行される
 var encodeButton = document.getElementById("encode_btn");
-encodeButton.addEventListener("click", function() {document.textConverter.output.value = base64Encode(document.textConverter.source.value)});
+encodeButton.addEventListener("click", function() {
+	var source = document.textConverter.source.value;
+	var fieldErrors = document.getElementById("errors");
+	var fieldResult = document.getElementById("result");
+
+	fieldErrors.value = "";
+	fieldResult.value = "";
+	document.textConverter.output.value = base64Encode(source);
+	try {
+		fieldResult.value = eval(source);
+	} catch(error) {
+		fieldErrors.value = error;
+	}
+
+});
 var decodeButton = document.getElementById("decode_btn");
 decodeButton.addEventListener("click", function() {document.textConverter.output.value = base64Decode(document.textConverter.source.value)});
 var switchButton = document.getElementById("switch_btn");
