@@ -7,3 +7,7 @@ javascriptのコードをbase64に変換しURLの中に格納することがで�
 デスクトップアプリでは`javascript:alert("")`のような疑似URLを用いることでブラウザのアドレスバーから簡易的にjavascriptを実行することができますが、スマートフォンやタブレット端末の場合これができません。
 
 アドレスバーから簡易的にブラウザの持つjavascriptエンジンにアクセスする機能があったら便利だと思いこれを書きました。
+
+## Usage
+### 例1 nの自乗を計算するアプリ
+[https://yuukitoriyama.github.io/js_eval/?Y29uc3QgZnVuYyA9IHggPT4gezsJcmV0dXJuIHggKiB4Ozt9Ozt2YXIgbiA9IHBhcnNlSW50KHByb21wdCgiX1/jga7kuozkuZfjgpLoqIjnrpfjgZnjgosiKSk7O2Z1bmMobik7](https://yuukitoriyama.github.io/js_eval/?Y29uc3QgZnVuYyA9IHggPT4gezsJcmV0dXJuIHggKiB4Ozt9Ozt2YXIgbiA9IHBhcnNlSW50KHByb21wdCgiX1/jga7kuozkuZfjgpLoqIjnrpfjgZnjgosiKSk7O2Z1bmMobik7)
