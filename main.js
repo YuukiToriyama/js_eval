@@ -38,11 +38,14 @@ encodeButton.addEventListener("click", function() {
 	var fieldErrors = document.getElementById("errors");
 	var fieldResult = document.getElementById("result");
 
+	// ボタンを押すと一旦クリアされる
 	fieldErrors.value = "";
 	fieldResult.value = "";
 	document.textConverter.output.value = base64Encode(source);
 	try {
 		fieldResult.value = eval(source);
+		// base64エンコードしたものを後ろに付けたURLを発行する
+		document.textConverter.url.value = location.origin + "/?" + base64Encode(source);
 	} catch(error) {
 		fieldErrors.value = error;
 	}

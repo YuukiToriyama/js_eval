@@ -52,7 +52,7 @@ form textarea {
 	display: block;
 	outline: none;
 	border: none;
-	height: 200px;
+	/*height: 200px;*/
 	line-height: 25px;
 	font-size: 16px;
 	padding: 0;
