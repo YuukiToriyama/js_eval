@@ -1,3 +1,4 @@
 /* main.js */
 var param = location.search;
-alert(param);
+var field = document.getElementById("field");
+field.innerHTML = "<h1>hogehoge</h1>";
