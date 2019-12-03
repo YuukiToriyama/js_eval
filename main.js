@@ -2,12 +2,21 @@
 
 // アドレスの末尾にbase64コードが付けられた時、それをデコードして実行する
 var code = location.search.slice(1);
-result = eval(base64Decode(code));
+try {
+	var result = eval(base64Decode(code));
+	alert(result);
+	document.getElementById("result").value = result;
+} catch(error) {
+	console.log(error);
+	document.getElementById("errors").value = error;
 
+}
+/*
 if (result != undefined) {
 	alert(result);
+	document.getElementById("decode_btn").value = result;
 }
-
+*/
 
 // textareaでtabを入力できるようにするコード
 document.getElementById("source").addEventListener("keydown", function(e) {
