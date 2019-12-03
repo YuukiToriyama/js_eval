@@ -45,7 +45,7 @@ encodeButton.addEventListener("click", function() {
 	try {
 		fieldResult.value = eval(source);
 		// base64エンコードしたものを後ろに付けたURLを発行する
-		document.textConverter.url.value = location.origin + "/?" + base64Encode(source);
+		document.textConverter.url.value = location.origin + location.pathname + "?" + base64Encode(source);
 	} catch(error) {
 		fieldErrors.value = error;
 	}
