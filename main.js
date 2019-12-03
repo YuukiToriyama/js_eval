@@ -1,7 +1,6 @@
 /* main.js */
-var param = location.search;
-code = param.slice(1);
-result = eval(code);
+var code = location.search.slice(1)
+result = eval(atob(code));
 
 var field = document.getElementById("field");
 field.innerHTML = "<h1>" + filed + "</h1>";
