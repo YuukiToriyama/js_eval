@@ -40,6 +40,14 @@ var encodeButton = document.getElementById("encode_btn");
 encodeButton.addEventListener("click", function() {document.textConverter.output.value = base64Encode(document.textConverter.source.value)});
 var decodeButton = document.getElementById("decode_btn");
 decodeButton.addEventListener("click", function() {document.textConverter.output.value = base64Decode(document.textConverter.source.value)});
+var switchButton = document.getElementById("switch_btn");
+switchButton.addEventListener("click", function() {
+	var a = document.textConverter.source.value;
+	var b = document.textConverter.output.value;
+	document.textConverter.source.value = b;
+	document.textConverter.output.value = a;
+})
+
 
 // base64とユニコード文字列の相互変換
 function base64Encode(input) {

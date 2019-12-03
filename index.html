@@ -3,29 +3,48 @@
 <head>
 	<title>js eval</title>
 	<meta charset="UTF-8" />
-	<style type="text/css">
-		button {
-			margin: 10px;
-		}
-	</style>
+	<link rel="stylesheet" href="./style.css" type="text/css" charset="utf-8"/ >
 </head>
 <body>
-<div id="field"></div>
-<form name="textConverter" id="form_1" action="">
-	<textarea name="source" cols="60" rows="10" id="source"></textarea>
-	</br>
-	<button type="button" id="encode_btn"><h1>Encode</h1></button>
-	<button type="button" id="decode_btn"><h1>Decode</h1></button>
-	</br>
-	<textarea name="output" cols="60" rows="10" readonly="readonly" id="output"></textarea>
-</form>
-<form name="resultShow" id="form_2" action="">
-	<h1>Result</h1>
-	<textarea name="result" cols="60" rows="5" readonly="readonly" id="result"></textarea>
-	</br>
-	<h1>Error</h1>
-	<textarea name="errors" cols="60" rows="3" readonly="readonly" id="errors"></textarea>
-</form>
+<div id="Converter">
+	<h1>Base64 Converter</h1>
+	<form name="textConverter" id="form_1" action="">
+		<ul>
+		<li>
+			<label for="source">Source</label>
+			<textarea name="source" cols="60" rows="10" id="source" ></textarea>
+			<span>Enter source code</span>
+		</li>
+		<li>
+			<button type="button" id="encode_btn">Encode</button>
+			<button type="button" id="switch_btn">↑↓</button>
+			<button type="button" id="decode_btn">Decode</button>
+		</li>
+		<li>
+			<label for="output">Output</label>
+			<textarea name="output" cols="60" rows="10" readonly="readonly" id="output"></textarea>
+			<span>Encoded text</span>
+		</li>
+		</ul>
+	</form>
+</div>
+<div id="js_execution">
+	<h1>JavaScript Execute</h1>
+	<form name="resultShow" id="form_2" action="">
+		<ul>
+		<li>
+			<label for="result">実行結果</label>
+			<textarea name="result" cols="60" rows="5" readonly="readonly" id="result"></textarea>
+			<span>実行結果を表示します</span>
+		</li>
+		<li>
+			<label for="errors">Errors</label>
+			<textarea name="errors" cols="60" rows="3" readonly="readonly" id="errors"></textarea>
+			<span>実行時に発生したエラーを表示します</span>
+		</li>
+		</ul>
+	</form>
+</div>
 <script src="./main.js" type="text/javascript"></script>
 </body>
 </html>
