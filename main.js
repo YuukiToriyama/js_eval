@@ -64,7 +64,7 @@ switchButton.addEventListener("click", function() {
 
 // base64とユニコード文字列の相互変換
 function base64Encode(input) {
-	return btoa(unescape(encodeURIComponent(input.replace(/\r?\n/g, ""))));
+	return btoa(unescape(encodeURIComponent(input.replace(/\r?\n/g, ";"))));
 }
 function base64Decode(input) {
 	try {
